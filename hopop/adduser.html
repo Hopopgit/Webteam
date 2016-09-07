@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    
+    <head>
+        <meta charset="utf-8" />
+        <title>Add user </title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <meta content="" name="description" />
+        <meta content="" name="author" />
+		<!--------------->
+		<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Oxygen:400,700">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="layout.css">
+    <script charset="utf-8" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script charset="utf-8" src="//cdn.datatables.net/1.10.0/js/jquery.dataTables.js"></script>
+    <script charset="utf-8" src="//cdn.jsdelivr.net/jquery.validation/1.13.1/jquery.validate.min.js"></script>
+        <!-- BEGIN GLOBAL MANDATORY STYLES -->
+        <link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
+        <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+        <link href="css/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="css/uniform.default.css" rel="stylesheet" type="text/css" />
+        <link href="css/bootstrap-switch.min.css" rel="stylesheet" type="text/css" />
+		<script charset="utf-8" src="webapp.js"></script>
+		<!--custom script for validation----->
+		<script>
+		$(function() {
+
+    $("#form_company input,#form_company textarea").jqBootstrapValidation({
+        preventSubmit: true,
+        submitError: function($form, event, errors) {
+            // additional error messages or events
+        },
+        submitSuccess: function($form, event) {
+            event.preventDefault(); // prevent default submit behaviour
+            // get values from FORM 	
+            var name = $("input#name").val();
+            var email = $("input#email_id").val();
+            var phone = $("input#contact_number").val();
+            var message = $("textarea#address").val();
+            var message = $("textarea#mode_of_transport").val();
+			}
+});
+    });
+	</script>
+        <!-- END GLOBAL MANDATORY STYLES -->
+       
+		 <style>
+		 .header-cont {
+    width:100%;
+    position:fixed;
+    top:0px;
+}
+.header {
+    height:50px;
+    background:rgb(0,0,0);
+    border:1px solid #CCC;
+    width:1400px;
+    margin:0px auto;
+}
+img{
+	width:130px;
+	height:40px;
+	padding-top:10px;
+}
+.form-control{
+	width:400px
+}
+#register{
+width:400px;
+}
+h3{
+color:green;
+}
+.footer{
+padding-top:80px;
+}
+</style>
+
+        </head>
+        <body>
+    
+    <div class="header-cont">
+    <div class="header">
+	<!--a href="http://www.hopop.in"><h3 Style="padding-top:-50px;">HopOp</h3></a-->
+	<a href="http://www.hopop.in"><img src="h1.png" alt=""></a>
+	</div>
+	
+	
+	<div id="message_container">
+      <div id="message" class="success">
+        <p>This is a success message.</p>
+      </div>
+    </div>
+    
+      
+		
+            <div class="container-fluid">
+			<div class="col-md-4"></div>
+			
+			<div class="col-md-6">
+			<h3><b > Register Here for free Ride</b></h3>
+            <!--form action="addform.php" method="post" id="adduserform" name="sentMessage" -->
+                        
+<form class="form add" id="form_company" data-id="" novalidate>
+<div class="form-group">
+<label>Name:</label><input type="text" name="name" placeholder="Name" class="form-control" id="name" required/>
+</div>
+<div class="form-group">
+<label>Email Id:</label><input type="email" name="email_id" placeholder="Email" class="form-control" id="email_id" required/>
+</div>
+
+<div class="form-group">
+<label>Contact number:</label><input type="number" name="contact_number" pattern="\d{10}" placeholder="Contact number" class="form-control" id="contact_number" required/>
+</div>
+<div class="form-group">
+<label>Address:</label><textarea type="text" name="location" placeholder="Location" class="form-control" id="location" required></textarea>
+</div>
+
+<div class="form-group">
+<label>Mode of Transport:</label><input type="text" name="mode_of_transport" placeholder="Car/Auto/BMTC/Bike/Cabs/college Bus" class="form-control" id="mode_of_transport" required/>
+</div>
+<div>
+<div class="form-group">                                 
+<button type="submit"  class="btn btn-primary pull pull-left" id="register">Register</button>
+</div>
+</div>
+
+</form>
+ </div>
+ 
+	
+	 
+   
+	 <div class="container">
+	<div class="footer pull-right" >
+	&copy; 2016 www.redbeak.co.in  |  All Rights Reserved</div>
+                  
+    </div>
+           
+               
+               
+      
+            
+        </div>
+	</div>
+	
+    </body>
+	</html>

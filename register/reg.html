@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Registration Form using jQuery Ajax and PHP MySQL</title>
+<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+<!-- our style sheet-->
+<link href="css/reg.css" rel="stylesheet" type="text/css" media="screen">
+<script type="text/javascript" src="js/jquery-1.11.3-jquery.min.js"></script>
+<script type="text/javascript" src="js/validation.min.js"></script>
+<script type="text/javascript" src="js/jquery.validate.js"></script>
+<script type="text/javascript" src="js/registerformvalidate.js"></script>
+<link href="style.css" rel="stylesheet" type="text/css" media="screen">
+<script type="text/javascript" src="js/script.js"></script>
+<style>
+body {
+	/* background-color: #5c97bd */
+	background-color: #e5e5e5;
+}
+</style>
+</head>
+<body>
+
+<div class="signin-form">
+
+ <div class="container">
+<div class="col-md-3"></div>
+  <div class="col-md-6">
+
+       <form class="form-signin" method="post" id="register-form">
+
+        <h2 class="form-signin-heading">Sign Up</h2><hr />
+
+        <div id="error">
+        <!-- error will be showen here ! -->
+        </div>
+
+        <div class="form-group">
+        <input type="text" class="form-control" placeholder="First name" name="first_name" id="first_name" />
+        </div>
+
+        <div class="form-group">
+        <input type="text" class="form-control" placeholder="last name" name="last_name" id="last_name" />
+        </div>
+        <div class="form-group">
+        <input type="text" class="form-control" placeholder="login name" name="login_name" id="login_name" />
+        </div>
+        <div class="form-group">
+        <input type="password" class="form-control" placeholder="password" name="encrypt_password" id="encrypt_password" />
+        </div>
+        <div class="form-group">
+        <input type="email" class="form-control" placeholder="Email address" name="email_id" id="email_id" />
+        <span id="check-e"></span>
+        </div>
+        <div class="form-group">
+        <select  class="form-control" placeholder=" Select user role" name="user_role" id="user_role" >
+        <option>Select role</option>
+      <option>1</option>
+    <option>2</option></select>
+        </div>
+
+        <div class="form-group">
+        <input type="number" class="form-control" placeholder="contact number" name="contact_number" id="contact_number" />
+        </div>
+        <div class="form-group">
+        <textarea type="text" class="form-control" row="6" placeholder="Address" name="address" id="address"></textarea>
+        </div>
+      <hr/>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary pull pull-left" name="btn-save" id="btn-submit" style="width:200px;">
+     Create
+   </button>
+
+            <button type="reset" class="btn btn-warning pull pull-right" name="btn-reset" id="btn-reset"style="width:200px;">
+      Reset
+   </button>
+        </div>
+      
+
+      </form>
+
+    </div>
+</div>
+</div>
+
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

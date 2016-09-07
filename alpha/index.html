@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>jQuery SCRUD system</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Oxygen:400,700">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="layout.css">
+    <script charset="utf-8" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script charset="utf-8" src="//cdn.datatables.net/1.10.0/js/jquery.dataTables.js"></script>
+    <script charset="utf-8" src="//cdn.jsdelivr.net/jquery.validation/1.13.1/jquery.validate.min.js"></script>
+    <script charset="utf-8" src="webapp.js"></script>
+	<!-- BEGIN GLOBAL MANDATORY STYLES -->
+                 <!--link rel="stylesheet" type="text/css" href="css/bootstrap.css"/-->
+       <link rel="stylesheet" type="text/css" href="bootstrap-3.3.6-dist/js/bootstrap.min.js"/>
+       <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    
+	
+  </head>
+  <body>
+  <!--div class="header-cont">
+    <div class="header">
+	<a href="#"><img src="redbeak.PNG" alt=""></a>
+	</div-->
+
+ 
+<div></div>
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid"> 
+    <div class="navbar-header">      
+      <a class="navbar-brand" href="#"><img src="redbeak.PNG" alt=""></a>
+      </div>
+      <div >
+     <ul class="nav navbar-nav" id="topnav">
+    <li><a href="#">Home</a></li>
+	<li><a href="users.html">All Users</a></li>      
+      <li><a href="#">My account</a></li> 
+      <li><a href="#">Update info</a></li> 
+      <li><a href="#">Notification</a></li> 
+	  <li><a href="#">Report</a></li> 
+      <li><a href="#">Feedback</a></li> 
+      <li><a href="#">Enquery</a></li>
+    </ul>
+    </div>
+      <div class="collapse navbar-collapse"> 
+     
+      <ul class="nav navbar-nav navbar-right" style="padding-top:10px;padding-right:10px;">
+      
+        <a href="login.html" class="btn btn-info" role="button">Logout</a>
+        
+      </ul>
+      </div>
+    </div>
+    </div>
+
+    <div id="page_container" class="container-fluid">
+	<div class="row">
+	<div class="col-md-4"></div>
+	
+
+      <h1>Customer interface</h1>
+
+      <button type="button" class="button" id="add_company">Add User</button>
+
+      <table class="datatable" id="table_companies" >
+        <thead>
+          <tr>
+		  
+             
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Contact</th>
+							
+                            <th>Address</th>
+							<th>Transport Mode</th>
+							<th>Created on</th>
+							<th>updated on</th>
+							<th>created by</th>
+							<th>Coupon Code</th>
+                            
+							<!--th>Auth_key</th>
+                            <th>Gender</th>
+                            <th>DOB</th-->
+                            <th>Functions</th>
+
+							
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+	</div>
+	</div>
+
+    </div>
+
+	 
+
+    <div class="lightbox_bg"></div>
+
+    <div class="lightbox_container">
+      <div class="lightbox_close"></div>
+      <div class="lightbox_content">
+         
+		
+        <h2>Add User</h2>
+        <form class="form add" id="form_company" data-id="" novalidate>
+          <div class="input_container">
+            <label for="name">Name: <span class="required">*</span></label>
+            <div class="field_container">
+              <input type="text" step="1" class="text" name="name" id="name" value="" required>
+            </div>
+          </div>
+		  
+          <div class="input_container">
+            <label for="email_id">Email: <span class="required">*</span></label>
+            <div class="field_container">
+              <input type="email" class="text" name="email_id" id="email_id" value="" required>
+            </div>
+          </div>
+          <div class="input_container">
+            <label for="contact_number">Contact Number: <span class="required">*</span></label>
+            <div class="field_container">
+              <input type="tel" class="text" name="contact_number" id="contact_number" value="" required>
+            </div>
+          </div>
+		  
+          <div class="input_container">
+            <label for="location">Address: <span class="required">*</span></label>
+            <div class="field_container">
+              <input type="address"  min="3" class="text" name="location" id="location" value="" required>
+            </div>
+          </div>
+          <div class="input_container">
+            <label for="mode_of_transport">Mode of Transport: <span class="required">*</span></label>
+            <div class="field_container">
+              <input type="text"  class="text" name="mode_of_transport" id="mode_of_transport" value="" required>
+            </div>
+          </div>
+		   <div class="input_container">
+            <label for="created_on">Created on: <span class="required">*</span></label>
+            <div class="field_container">
+              <input type="datetime"  class="text" name="created_on" id="created_on" value="" required>
+            </div>
+          </div>
+		   <div class="input_container">
+            <label for="updated_on">Updated on: <span class="required">*</span></label>
+            <div class="field_container">
+              <input type="datetime"  class="text" name="updated_on" id="updated_on" value="" required>
+            </div>
+          </div>
+		   <div class="input_container">
+            <label for="created_by">Created by: <span class="required">*</span></label>
+            <div class="field_container">
+              <input type="text"  class="text" name="created_by" id="created_by" value="" >
+            </div>
+          </div>
+		  <div class="input_container">
+            <label for="coupon_code">Coupon Code: <span class="required">*</span></label>
+            <div class="field_container">
+              <input type="text" class="text" name="coupon_code" id="coupon_code" value="" >
+            </div>
+          </div>
+         
+          
+          <div class="button_container">
+            <button type="submit">Add User</button>
+          </div>
+        </form>
+        
+      </div>
+	  </div>
+    <div class="smsbox_bg"></div>
+
+    <div class="smsbox_container">
+      <div class="smsbox_close"></div>
+      <div class="smsbox_content">
+<h2>Send Email</h2>
+        <form class="form_send" id="form_sms" data-id="" novalidate>
+          <div class="input_container">
+            <label for="name">Name: <span class="required">*</span></label>
+            <div class="field_container">
+              <input type="text"  class="text" name="name" id="name" />
+            </div>
+          </div>
+<div class="input_container">
+            <label for="email_id">Email: <span class="required">*</span></label>
+            <div class="field_container">
+              <input type="text"  class="text" name="email_id"  id="email_id" />
+            </div>
+          </div>
+      <div class="input_container">
+            <label for="message">Enter message: <span class="required">*</span></label>
+            <div class="field_container">
+              <textarea type="text" class="form-control" name="message"  id="message"  ></textarea>
+            </div>
+          </div>
+         
+          
+          <div class="button_container">
+            <button type="submit">Send</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+	 
+	 
+    
+	
+ 
+    <noscript id="noscript_container">
+      <div id="noscript" class="error">
+        <p>JavaScript support is needed to use this page.</p>
+      </div>
+    </noscript>
+
+    <div id="message_container">
+      <p id="returnmessage"></p>
+      <div id="message" class="success">
+        <p>This is a success message.</p>
+      </div>
+    </div>
+
+    <div id="loading_container">
+      <div id="loading_container2">
+        <div id="loading_container3">
+          <div id="loading_container4">
+            Loading, please wait...
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>

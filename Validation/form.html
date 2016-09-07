@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Registration Form using jQuery Ajax and PHP MySQL</title>
+<link href="css/bootstrap.css" rel="stylesheet" media="screen">
+<!-- our style sheet-->
+<script type="text/javascript" src="js/jquery-1.9.1.js"></script>>
+<script src="js/jqBootstrapValidation.js"></script>
+<script src="validate.js"></script>
+<link href="style.css" rel="stylesheet" type="text/css" media="screen">
+<style>
+body {
+	/* background-color: #5c97bd */
+	background-color: #e5e5e5;
+}
+</style>
+</head>
+<body>
+
+<div class="signin-form">
+
+ <div class="container">
+<div class="col-md-3"></div>
+  <div class="col-md-6">
+
+       <form action="connection.php" class="form-signin" method="post" id="registerform" novalidate>
+
+        <h2 class="form-signin-heading">Sign Up</h2><hr />
+
+        <div id="error">
+        <!-- error will be showen here ! -->
+        </div>
+
+        <div class="form-group">
+        <input type="text" class="form-control" placeholder="First name*" name="first_name" id="first_name" required data-validation-required-message="Please enter firstName name." />
+        <p class="help-block text-danger"></p>
+        </div>
+
+        <div class="form-group">
+        <input type="text" class="form-control" placeholder="last name*" name="last_name" id="last_name" required data-validation-required-message="Please enter  last name." />
+         <p class="help-block text-danger"></p>
+        </div>
+        <div class="form-group">
+        <input type="text" class="form-control" placeholder="login name*" name="login_name" id="login_name" required data-validation-required-message="Please enter your login name." />
+         <p class="help-block text-danger"></p>
+        </div>
+        <div class="form-group">
+        <input type="password" class="form-control" placeholder="password*" name="encrypt_password" id="encrypt_password" required data-validation-required-message="Please enter password."/>
+         <p class="help-block text-danger"></p>
+        </div>
+        <div class="form-group">
+        <input type="email" class="form-control" placeholder="Email address*" name="email_id" id="email_id"required data-validation-required-message="Please enter your email." />
+        <span id="check-e"></span>
+        <p class="help-block text-danger"></p>
+        </div>
+        <div class="form-group">
+        <select  class="form-control"  name="user_role" id="user_role" required data-validation-required-message="Please enter user role." >
+        <option>Select role</option>
+      <option>1</option>
+    <option>2</option></select>
+ <p class="help-block text-danger"></p>
+        </div>
+
+        <div class="form-group">
+        <input type="number" class="form-control" placeholder="contact number*" name="contact_number" id="contact_number" required data-validation-required-message="Please enter contact no." />
+         <p class="help-block text-danger"></p>
+        </div>
+        <div class="form-group">
+        <textarea  class="form-control"  placeholder="Address*" name="address" id="address"required data-validation-required-message="Please enter address."></textarea>
+ <p class="help-block text-danger"></p>
+        </div>
+      <hr/>
+
+        <div class="form-group">
+          <div class="clearfix"></div>
+          <div id="success"></div>
+            <button type="submit" class="btn btn-primary pull pull-left" name="btn-save" id="btn-submit" style="width:200px;">
+     Create
+   </button>
+
+            <button type="reset" class="btn btn-warning pull pull-right" name="btn-reset" id="btn-reset"style="width:200px;">
+      Reset
+   </button>
+        </div>
+
+
+      </form>
+</div>
+    </div>
+</div>
+
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

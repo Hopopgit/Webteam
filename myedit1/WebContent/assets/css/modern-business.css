@@ -1,0 +1,130 @@
+/*!
+ * Start Bootstrap - Modern Business HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+/* Global Styles */
+ 
+html,
+body {
+    height: 100%;
+}
+
+body {
+    padding-top: 50px; Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes.
+}
+
+.img-portfolio {
+    margin-bottom: 30px;
+}
+
+.img-hover:hover {
+    opacity: 0.8;
+} 
+
+/* Home Page Carousel */
+
+section.carousel {
+    height: 70%;
+}
+
+section.carousel .item,
+section.carousel .item.active,
+section.carousel .carousel-inner {
+    height: 100%;
+}
+
+ section.carousel .fill {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+} 
+
+.carousel-caption h2{
+	font-size: 58px;
+  text-shadow: 0 3px rgba(0, 0, 0, 0.1);
+  
+   color: #fff; 
+}
+.lead{
+	font-size:30px;
+	color:#ff8080;
+}
+
+/*---- Product bg color--- */
+#bgcolor{
+	border-radius: 15px 50px;
+	background-color:#33ffcc;
+	height: 300px;
+	color: #527a7a;
+}
+#bg1{
+	border-radius: 15px 50px;
+	background-color:#009999;
+	height: 300px;
+	color: #ffffff;
+}
+#bg2{
+	border-radius: 15px 50px;
+	background-color:#cccccc;
+	height: 300px;
+	font-color: #b30000;
+}
+#bg3{
+	border-radius: 15px 50px;
+	background-color:#ff9933;
+	height: 300px;
+	font-color: #fff;
+}
+
+/* 404 Page Styles */
+
+/* .error-404 {
+    font-size: 100px;
+}
+
+Pricing Page Styles
+
+.price {
+    display: block;
+    font-size: 50px;
+    line-height: 50px;
+}
+
+.price sup {
+    top: -20px;
+    left: 2px;
+    font-size: 20px;
+}
+
+.period {
+    display: block;
+    font-style: italic;
+}
+
+Footer Styles
+
+footer {
+    margin: 50px 0;
+} */
+
+/* Responsive Styles */
+
+  @media(max-width:991px) {
+    .customer-img,
+    .img-related {
+        margin-bottom: 30px;
+    }
+}
+ 
+@media(max-width:767px) {
+    .img-portfolio {
+        margin-bottom: 15px;
+    } 
+
+    section.carousel .carousel {
+        height: 70%;
+    }
+}

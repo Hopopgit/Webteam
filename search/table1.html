@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <link rel="stylesheet" type="text/css"
+        href="//cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css" />
+    <script src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js">
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            console.log('ready');
+            $.ajax({
+                url: 'jquerydb.php',
+                method: 'post',
+                dataType: 'json'
+                })
+
+
+                .done(function (data) {
+                    console.log('data', data);
+                    $('#datatable').dataTable({
+                        paging: true,
+                        sort: true,
+                        searching: true,
+                        scrollY: 200,
+                        data: data,
+                        columns: [
+                            { 'data': 'id' },
+                            { 'data': 'firstname' },
+                            { 'data': 'lastname' },
+                            { 'data': 'gender' },
+                            { 'data': 'jobtitle' },
+                            {
+                                'data': 'webSite',
+                                'sortable': false,
+                                'searchable': false,
+                                'render': function (webSite) {
+                                    if (!webSite) {
+                                        return 'N/A';
+                                    }
+                                    else {
+                                        return '<a href=' + webSite + '>'
+                                            + webSite.substr(0, 10) + '...' + '</a>';
+                                    }
+                                }
+                            },
+                            {
+                                'data': 'salary',
+                                'render': function (salary) {
+                                    return "$" + salary;
+                                }
+                            },
+                            {
+                                'data': 'hiredate',
+                                'render': function (jsonDate) {
+                                    var date = new Date(parseInt(jsonDate.substr(6)));
+                                    var month = date.getMonth() + 1;
+                                    return month + "/" + date.getDate() + "/" + date.getFullYear();
+                                }
+                            }
+                        ]
+                    });
+                })
+                .fail(function( jqXHR, textStatus, errorThrown ) {
+                    console.error('textStatus', textStatus);
+                    console.error('error', errorThrown);
+                });
+            });
+    </script>
+</head>
+<body style="font-family: Arial">
+    <form id="form1" runat="server">
+        <div style="width: 900px; border: 1px solid black; padding: 3px">
+            <table id="datatable">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Gender</th>
+                        <th>Job Title</th>
+                        <th>Web Site</th>
+                        <th>Salary</th>
+                        <th>Hire Date</th>
+                    </tr>
+                </thead>
+                
+            </table>
+        </div>
+    </form>
+</body>
+</html>

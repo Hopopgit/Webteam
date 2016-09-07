@@ -1,0 +1,185 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+
+body{background:#ff9933;
+height:790px;
+}
+
+.main_wrapper{
+width:auto;
+margin:auto;
+height:740px;
+}
+
+.header_wrapper{
+width:auto;
+height:30px;
+margin:auto;
+background-color:#803300;
+}
+
+.menubar{
+width:auto;
+height:50px;
+background-color:#b34700;
+color:#ffffff;
+
+}
+
+#menu{
+padding:0;	
+margin:0;
+line-height:40px;
+float:left;
+font-family:Arial Black;
+font-size:20px;
+}
+
+#menu li{
+list-style:none;
+display:inline;
+}
+
+#menu a{
+text-decoration:none;
+color:white;
+padding:8px;
+margin:5px;
+font-size=18px;
+font-family:Geneva;
+}
+
+#menu a:hover{color:black; font-weight:bolder; text-decoration:underline;}
+
+#form {float:left; padding-top:10px; line-height:40px;color:white;}
+#logout a{float:right; padding-right:10px; line-height:40px;color:white;}
+
+#form_search{float:center; padding-right:30px; line-height:100px; width:50px;}
+
+#logo{
+float:left;
+height:30px;
+width:150px;
+}  
+
+#banner{
+float:right;
+height:150px;
+width:800px;
+}
+
+.content_wrapper
+{
+ width:auto;
+ height:660px;
+ margin:auto;
+ background-color:#ffb380;
+ color:white;
+
+}
+
+#content_area{
+width:800px;
+float:right;
+ 
+}
+
+#sidebar{
+width:250px;
+float:left;
+background-color:#cc5200;
+height:660px;
+}
+
+#sidebar_title{
+background:#331400;
+color:white;
+font-size:22px;
+font-family:Geneva;
+padding:15px;
+text-align:center;
+}
+#cats{text-align:center; }
+
+#cats li{list-style:none; margin:5px;}
+
+#cats a{color:white; margin:5px; text-align:center; font-size:20px; text-decoration:none}
+
+#cats a:hover{color:black; font-weight:bolder; text-decoration:underline;}
+
+#add_user
+{
+	text-align:right;
+	
+}
+#products_box{
+width:720px;
+margin-left:30px;
+margin-bottom:10px;
+text-align:center;
+}
+
+#add_internal_user
+{
+	background-color:#ff8533;
+	float:center;
+	height:660px;
+}
+
+#search_user
+{
+	background-color:#ff8533;
+}
+#single_product{
+float:left;
+margin-left:30px;
+padding:10px;
+}
+
+#table{
+	
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+}
+
+#single_product img{border:2px solid black;}
+
+#shopping_cart{width:800px;height:50px;background:#00b36b; color:white;}
+#footer{
+width=auto;
+height:50px;
+background-color:#001a0f;
+clear:both;
+}
+#save{
+	
+	width:120px;
+}

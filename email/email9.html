@@ -1,0 +1,33 @@
+<html>
+<meta charset="UTF-8">
+<head>
+<script type="text/javascript" src="js/jquery-3.0.0.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$('#button').click(function(){
+var sendu=$("#username").val();
+var sendp=$("#password").val();
+var sende=$("#email").val();
+$.ajax({
+type:"POST",
+url:"ajax.php",
+data:"username="+sendu+"&password="+sendp+"&email="+sende,
+dataType:"json",
+success:function(msg,string,jqXHR){
+$('#result').html(msg.name+"<br/>"+msg.password+"<br/>"+msg.email);
+}
+});
+});
+});
+</script>
+</head>
+<body>
+<div id="result">
+</div>
+<input type="text" id="username" name="username" placeholder="name"/>
+<input type="password" id="password" name="password" placeholder="password"/>
+<input type="email" id="email" name="email" placeholder="email"/>
+<input type="button" id="button" value="submit"/>
+
+</body>
+</html>

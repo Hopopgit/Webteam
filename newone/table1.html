@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html >
+<head runat="server">
+    <title></title>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <link rel="stylesheet" type="text/css"
+        href="css/jquery.dataTables.min.css" />
+    <script src="js/jquery.dataTables.min.js">
+    </script>
+	
+    <script type="text/javascript">
+        $(document).ready(function () {
+            console.log('ready');
+            $.ajax({
+                url: 'jquerydb.php',
+                method: 'post',
+                dataType: 'json'
+                })
+
+
+                .done(function (data) {
+                    console.log('data', data);
+                    $('#datatable').dataTable({
+                        paging: true,
+                        sort: true,
+                        searching: true,
+                        scrollY: 200,
+                        data: data,
+						//renderForm($id, $first_name, $last_name, $login_name, $password, $email_id, $user_role, $user_permission
+//, $contact_number, $address, $error)
+                        columns: [
+                            { 'data': 'id' },
+                            { 'data': 'first_name' },
+                            { 'data': 'last_name' },
+                            { 'data': 'login_name' },
+                            { 'data': 'password' },
+                            {
+                                'data': 'email_id',
+                                'sortable': false,
+                                'searchable': false,
+                                'render': function (email_id) {
+								return "$" + email_id;
+                                   /* if (!email_id) {
+                                        return 'N/A';
+                                    }
+                                    else {
+                                        return '<a href=' + email_id + '>'
+                                            + email_id.substr(0, 10) + '...' + '</a>';
+                                    }*/
+									
+                                }
+                            },
+                            {
+                                'data': 'user_role',
+                                'render': function (user_role) {
+                                    return "$" + user_role;
+                                }
+                            },
+                            {
+                                'data': 'user_permission',
+                                'render': function (user_permission) {
+								return "$" + user_permission;
+                                    /*var date = new Date(parseInt(jsonDate.substr(6)));
+                                    var month = date.getMonth() + 1;
+                                    return month + "/" + date.getDate() + "/" + date.getFullYear();*/
+									 }
+                            },
+                            {
+							'data': 'contact_number',
+                                'render': function (contact_number) {
+                                    return "$" + contact_number;
+                                }
+                            },
+                            {
+							'data': 'address',
+                                'render': function (address) {
+                                    return "$" + address;
+                                }
+                                }
+                            
+                        ]
+                    });
+                })
+                .fail(function( jqXHR, textStatus, errorThrown ) {
+                    console.error('textStatus', textStatus);
+                    console.error('error', errorThrown);
+                });
+            });
+    </script>
+
+</head>
+<body style="font-family: Arial">
+    <form id="form1" runat="server">
+        <div style="width: 1200px; border: 1px solid black; padding: 3px">
+            <table id="datatable">
+                <thead>
+                    <tr>
+					
+                        <th>id</th>
+                        <th>first_name</th>
+                        <th>last_name</th>
+                        <th>login_name</th>
+                        <th>password</th>
+                        <th>email_id</th>
+                        <th>user_role</th>
+                        <th>user_permission</th>
+						<th>contact_number</th>
+                        <th>address</th>
+                    </tr>
+                </thead>
+                
+            </table>
+        </div>
+    </form>
+</body>
+</html>
